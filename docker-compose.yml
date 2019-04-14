@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  fastify:
+    build:
+      context: .
+    ports:
+      - 80:80
+  
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_HOSTNAME=postgres
+      - POSTGRES_DB=local
+      - POSTGRES_USER=local
+      - POSTGRES_PASSWORD=local
